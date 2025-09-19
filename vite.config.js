@@ -3,8 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  root: './',
-  build: {
-    outDir: 'dist',
-  }
+  // Set base to your repository name (with slashes)
+  base: '/photography-portfolio/', // <-- replace with your actual repo name
 });
