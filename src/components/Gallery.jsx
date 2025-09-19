@@ -1,21 +1,13 @@
-import React from 'react';
+const makePlaceholders = (category) =>
+  Array.from({ length: 24 }, (_, i) => ({
+    id: `${category}-${i + 1}`,
+    src: `https://picsum.photos/seed/${category}-${i + 1}/1200/800`,
+    thumb: `https://picsum.photos/seed/${category}-${i + 1}/640/427`,
+    alt: `${category} photo ${i + 1}`,
+  }));
 
-export default function Gallery({ photos, title }) {
-  return (
-    <section>
-      <h2>{title}</h2>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-        {photos.map((photo) => (
-          <img
-            key={photo.id}
-            src={photo.thumb}
-            alt={photo.alt}
-            width={160}
-            height={107}
-            style={{ objectFit: 'cover' }}
-          />
-        ))}
-      </div>
-    </section>
-  );
-}
+export const GALLERIES = {
+  portrait: makePlaceholders('portrait'),
+  family: makePlaceholders('family'),
+  boudoir: makePlaceholders('boudoir'),
+};
