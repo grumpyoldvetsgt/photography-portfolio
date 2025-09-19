@@ -1,3 +1,4 @@
+
 const makePlaceholders = (category) =>
   Array.from({ length: 24 }, (_, i) => ({
     id: `${category}-${i + 1}`,

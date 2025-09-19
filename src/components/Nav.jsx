@@ -1,10 +1,17 @@
-import React from 'react';
+import React from "react";
 
-const Nav = () => {
+const Nav = ({ categories, onSelect }) => {
   return (
-    <nav>
-      <h1>Photography Portfolio</h1>
-      {/* Add navigation links here */}
+    <nav className="p-4 bg-gray-800 text-white flex gap-4">
+      {categories.map((cat) => (
+        <button
+          key={cat}
+          onClick={() => onSelect(cat)}
+          className="hover:bg-gray-700 px-3 py-1 rounded"
+        >
+          {cat.charAt(0).toUpperCase() + cat.slice(1)}
+        </button>
+      ))}
     </nav>
   );
 };
