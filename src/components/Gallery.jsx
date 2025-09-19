@@ -1,13 +1,13 @@
-const makePlaceholders = (category) =>
-  Array.from({ length: 24 }, (_, i) => ({
-    id: `${category}-${i + 1}`,
-    src: `https://picsum.photos/seed/${category}-${i + 1}/1200/800`,
-    thumb: `https://picsum.photos/seed/${category}-${i + 1}/640/427`,
-    alt: `${category} photo ${i + 1}`,
-  }));
+import React from 'react';
 
-export const GALLERIES = {
-  portrait: makePlaceholders('portrait'),
-  family: makePlaceholders('family'),
-  boudoir: makePlaceholders('boudoir'),
+const Gallery = ({ images }) => {
+  return (
+    <div className="gallery">
+      {images.map((img) => (
+        <img key={img.id} src={img.src} alt={img.alt} />
+      ))}
+    </div>
+  );
 };
+
+export default Gallery; // ✅ default export

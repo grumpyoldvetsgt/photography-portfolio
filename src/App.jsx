@@ -8,7 +8,15 @@ function App() {
   return (
     <div>
       <Nav />
-      <Gallery galleries={GALLERIES} />
+      <h2>Portrait Gallery</h2>
+      <Gallery images={GALLERIES.portrait} />
+
+      <h2>Family Gallery</h2>
+      <Gallery images={GALLERIES.family} />
+
+      <h2>Boudoir Gallery</h2>
+      <Gallery images={GALLERIES.boudoir} />
+
       <Footer />
     </div>
   );
