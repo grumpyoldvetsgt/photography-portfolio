@@ -1,45 +1,17 @@
-name: Deploy Vite Site to GitHub Pages
-
-on:
-  push:
-    branches:
-      - main  # Change if your default branch is different
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      # 1. Checkout repo
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # 2. Setup Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      # 3. Install dependencies
-      - name: Install dependencies
-        run: npm install
-
-      # 4. Build the Vite site
-      - name: Build site
-        run: npm run build
-
-      # 5. Upload build artifacts for deployment
-      - name: Upload build artifacts
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist
-
-      # 6. Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+{
+  "name": "photography-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.5.0"
+  }
+}
